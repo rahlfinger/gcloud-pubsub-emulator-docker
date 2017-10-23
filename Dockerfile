@@ -1,6 +1,6 @@
-FROM google/cloud-sdk:162.0.0-alpine
+FROM google/cloud-sdk:176.0.0-alpine
 
-LABEL maintainer "Adilson Carvalho <lc.adilson@gmail.com>"
+LABEL maintainer "Robert Ahlfinger <robert.ahlfinger@gmail.com>"
 
 RUN apk --update add openjdk7-jre
 RUN gcloud components install --quiet beta pubsub-emulator
