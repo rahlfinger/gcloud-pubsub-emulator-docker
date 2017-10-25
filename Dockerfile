@@ -1,10 +1,8 @@
-FROM google/cloud-sdk:latest
+FROM google/cloud-sdk:alpine
 
 LABEL maintainer "Robert Ahlfinger <robert.ahlfinger@gmail.com>"
 
-RUN add-apt-repository ppa:openjdk-r/ppa  
-RUN apt-get update   
-RUN apt-get install openjdk-7-jdk  
+RUN apk --update add openjdk7-jre  
 RUN gcloud components install --quiet beta pubsub-emulator
 RUN mkdir -p /var/pubsub
 
