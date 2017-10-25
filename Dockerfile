@@ -2,7 +2,9 @@ FROM google/cloud-sdk:latest
 
 LABEL maintainer "Robert Ahlfinger <robert.ahlfinger@gmail.com>"
 
-RUN apk --update add openjdk7-jre
+RUN add-apt-repository ppa:openjdk-r/ppa  
+RUN apt-get update   
+RUN apt-get install openjdk-7-jdk  
 RUN gcloud components install --quiet beta pubsub-emulator
 RUN mkdir -p /var/pubsub
 
