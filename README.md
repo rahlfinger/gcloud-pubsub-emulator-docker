@@ -20,6 +20,27 @@ Then to run it you can use
 
     docker run --rm -p "8085:8085" rahlfinger/gcloud-pubsub-emulator-docker
 
+If you are running it manually you will want to set up your ENV:
+
+```
+PUBSUB_EMULATOR_HOST=localhost:8085
+```
+
+Edit your /etc/hosts to add the following host:
+
+```
+127.0.0.1  pubsub.googleapis.com datastore.googleapis.com
+```
+
+On a mac you will need to setup some extra stuff to map the network between the
+docker container and your local machine.  To set up a subscription push endpoint use '123.123.123.123' instead of localhost.
+
+
+```
+sudo ifconfig lo0 alias 123.123.123.123/24
+sudo killall -HUP mDNSResponder
+```
+
 You can also use it on your `docker-compose.yml` file
 
 ```yaml
