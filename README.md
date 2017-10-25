@@ -10,15 +10,15 @@ This is the Docker image for the [Google Cloud PubSub Emulator](https://cloud.go
 
 To use this image, pull from [Docker Hub](https://hub.docker.com/r/rahlfinger/gcloud-pubsub-emulator-docker/) with the following command:
 
-    docker pull adilsoncarvalho/gcloud-pubsub-emulator:latest
+    docker pull rahlfinger/gcloud-pubsub-emulator-docker:latest
 
 or you can specify the desired version of it as follows:
 
-    docker pull adilsoncarvalho/gcloud-pubsub-emulator:162.0.0-alpine
+    docker pull rahlfinger/gcloud-pubsub-emulator-docker:162.0.0-alpine
 
 Then to run it you can use
 
-    docker run --rm -p "8085:8085" adilsoncarvalho/gcloud-pubsub-emulator
+    docker run --rm -p "8085:8085" rahlfinger/gcloud-pubsub-emulator-docker
 
 You can also use it on your `docker-compose.yml` file
 
@@ -33,7 +33,7 @@ services:
     depends_on:
     - emulator
   emulator:
-    image: adilsoncarvalho/gcloud-pubsub-emulator
+    image: rahlfinger/gcloud-pubsub-emulator-docker
     ports:
     - "8085:8085"
 ```
