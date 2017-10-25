@@ -1,4 +1,4 @@
-FROM google/cloud-sdk:176.0.0-alpine
+FROM google/cloud-sdk:{sourceref}
 
 LABEL maintainer "Robert Ahlfinger <robert.ahlfinger@gmail.com>"
 
