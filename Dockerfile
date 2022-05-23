@@ -2,7 +2,7 @@ FROM google/cloud-sdk:alpine
 
 LABEL maintainer "Robert Ahlfinger <robert.ahlfinger@gmail.com>"
 
-RUN apk --update add openjdk7-jre  
+RUN apk --update add openjdk11-jre
 RUN gcloud components install --quiet beta pubsub-emulator
 RUN mkdir -p /var/pubsub
 
